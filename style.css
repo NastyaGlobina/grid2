@@ -1,0 +1,257 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin: 0;
+}
+
+body {
+    color: var(--text-color);
+    background: var(--bkg-color);
+    fill: var(--fill-animation);
+}
+
+body.dark-theme {
+    --text-color: #eee;
+    --bkg-color: #3a3737;
+    --header-color: rgb(19, 18, 18);
+    --border: solid #000000;
+    --footer-color: rgb(19, 18, 18);
+    --fill-animation: hsl(0, 0%, 97%);
+}
+
+body.light-theme {
+    --text-color: rgb(0, 0, 0);
+    --bkg-color: #e1f2f8;
+    --header-color: #afbfc5;
+    --border: solid #7f8f95;
+    --footer-color: #afbfc5;
+}
+
+body.grey-theme {
+    --text-color: #eee;
+    --bkg-color: #a4a4a4;
+    --header-color: #757575;
+    --border: solid #3b3b3b;
+    --footer-color: #757575;
+    --fill-animation: hsl(0, 0%, 97%);
+}
+
+body.show-modal {
+    overflow: hidden;
+} 
+
+.modal {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.modal .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    margin: auto;
+    padding: 40px;
+    background-color: aliceblue;
+}
+
+.modal .close {
+    position: absolute;
+    display: inline-block;
+    top: 5px;
+    right: 10px;
+    padding: 12px;
+    cursor: pointer;
+    background: transparent;
+    outline: none;
+    color: #000000;
+}
+
+.modal-content .h3 {
+    text-align: center;
+    color: #000000;
+}
+
+.show-modal .modal {
+    display: block;
+}
+
+.h1 {
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+    font-size: 45px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 1rem 9%;
+    z-index: 10;
+}
+
+.header {
+    background: var(--header-color);
+    border-bottom: var(--border);
+}
+
+.header .nav {
+    display: flex;
+    font-family: sans-serif;
+    margin-left: auto;
+}
+
+.logo {
+    font-size: 25px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 46px;
+}
+
+.footer .a {
+    padding-right: 25px;
+}
+
+.footer .nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 14px;
+    width: 90%;
+}
+
+
+
+.footer {
+    background: var(--footer-color);
+    color: var(--text-color);
+    border-top: var(--border);
+}
+
+.footer .a {
+    color: var(--text-color);
+}
+
+
+.link {
+    display: flex;
+    justify-content: flex-start;
+    margin-right: auto;
+    margin-left: 140px;
+}
+
+.link >:hover {
+    transform: scale(1.3);
+}
+
+.icons > svg {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.icons > svg:hover {
+    transform: scale(1.3);
+    fill: rgba(255, 0, 0, 0.63);
+}
+
+
+.theme-select,
+.btn-group {
+    display: none;
+}
+
+.animation {
+    margin-bottom: -80px;
+    width: 99%;
+}
+
+
+
+
+svg text {
+    letter-spacing: 10px;
+    stroke: #7ccbf0;
+    font-size: 60px;
+    font-weight: 700;
+    stroke-width: 1;
+    animation: textAnimate 2s infinite alternate;
+}
+
+@keyframes textAnimate {
+    0% {
+        stroke-dasharray: 0 50%;
+        stroke-dashoffset: 20%;
+    }
+
+    100% {
+        stroke-dasharray: 50% 0;
+        stroke-dashoffstet: -20%;
+        fill: rgba(0, 0, 0, 0);
+    }
+}
+
+.grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr) [4];
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 10px;
+}
+
+.grid-item {
+    position: relative;
+    background-color: #cecece;
+}
+
+.grid-item > img {
+    width: 100%;
+    height: auto;
+}
+.grid-item:nth-child(12n + 1) {
+    -ms-grid-column-span: 3;
+    grid-column: span 3;
+    -ms-grid-row-span: 3;
+    grid-row: span 3;
+}
+
+.grid-item:nth-child(12n + 10) {
+    -ms-grid-column: 2;
+    grid-column-start: 2;
+    -ms-grid-column-span: -3;
+    grid-column-end: -1;
+    -ms-grid-row-span: 3;
+    grid-row: span 3;
+}
+
+
+.grid-item {
+    cursor: pointer;
+}
