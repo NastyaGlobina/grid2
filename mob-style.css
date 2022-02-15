@@ -1,5 +1,5 @@
 @media (max-width: 1080px) {
-    header {
+    .header {
         padding: 0;
     }
 
@@ -30,7 +30,7 @@
         display: none;
     }
 
-    footer nav {
+    .footer .nav {
         width: 100%;
     }
 
@@ -73,17 +73,17 @@
         margin-right: 35px;
     }
 
-    footer {
+    .footer {
         height: 90px;
     }
 
-    footer nav {
+    .footer .nav {
         flex-direction: column;
         justify-content: center;
         text-align: center;
     }
 
-    footer a {
+    .footer .a {
         padding: 0 45px 15px 30px;
     }
 
